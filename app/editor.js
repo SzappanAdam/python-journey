@@ -14,7 +14,8 @@ require(["vs/editor/editor.main"], function () {
     theme: "vs-dark",
     automaticLayout: true
   });
-
+  window.editor = editor;
+  
   initLesson(); // <- FONTOS: itt hívjuk meg
 });
 

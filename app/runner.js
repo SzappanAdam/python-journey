@@ -56,3 +56,22 @@ function resetOutput() {
 }
 
 resetOutput();
+
+async function runCode() {
+  console.log("RUN CLICKED");
+
+  const pyodide = await pyodideReady;
+
+  const code = window.editor.getValue();
+
+  document.getElementById("output").innerText = "";
+
+  setupInput(pyodide);
+  setupPrint(pyodide);
+
+  try {
+    await pyodide.runPythonAsync(code);
+  } catch (err) {
+    document.getElementById("output").innerText = err;
+  }
+}
