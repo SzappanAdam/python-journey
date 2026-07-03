@@ -1,36 +1,53 @@
-<<<<<<< HEAD
-# 🐍 Python Journey
+🐍 Python Journey
 
-Learn Python from scratch with interactive lessons,
-coding challenges and real-world projects.
+Learn Python from zero to real-world projects through interactive lessons, coding challenges, and hands-on practice. Whether you're writing your first line of code or strengthening your programming skills, Python Journey is designed to help you learn by doing.
 
-✔ Beginner friendly
+[GitHub Pages] [Course Roadmap] [Contribute]
 
-✔ Hands-on
+--------------------------------------------------
 
-✔ Exercises
+✨ Features
 
-✔ Quizzes
+📚 Step-by-step lessons
 
-✔ Browser-based code runner
+💻 Interactive code examples
 
-✔ 100% Free
+📝 Exercises
 
+🧠 Quizzes
 
-Who is this course for?
+🏆 Coding challenges
 
-Course roadmap
+🚀 Real-world projects
 
-Features
+🌐 Browser-based Python runner
 
-Projects
+--------------------------------------------------
 
-How to use
+📖 Course Roadmap
 
-Contributing
+🟢 Beginner
 
-License
-=======
-# python-alapok-kezdoknek
-Python alapok teljesen a nulláról. Rövid tananyagok, egyszerű feladatok.
->>>>>>> 42f370efb578f083d7800f35b4dd04921c0e8d2d
+🟡 Intermediate
+
+🔴 Advanced
+
+--------------------------------------------------
+
+🚀 Getting Started
+
+Clone
+
+Install Python
+
+Open VS Code
+
+Start Lesson 1
+
+--------------------------------------------------
+
+🤝 Contributing
+
+--------------------------------------------------
+
+📜 License
