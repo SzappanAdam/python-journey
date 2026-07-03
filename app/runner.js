@@ -1,12 +1,11 @@
-let pyodideReady = loadPyodide();
-
 let inputResolver = null;
+let inputQueue = [];
+let printInitialized = false;
 
-// INPUT override
 function setupInput(pyodide) {
   pyodide.globals.set("input", function(promptText) {
     return new Promise((resolve) => {
-      inputResolver = resolve;
+      inputQueue.push(resolve);
 
       const inputBox = document.getElementById("inputBox");
       const inputPrompt = document.getElementById("inputPrompt");
@@ -18,20 +17,9 @@ function setupInput(pyodide) {
   });
 }
 
-function submitInput() {
-  const inputBox = document.getElementById("inputBox");
-  const value = inputBox.value;
-
-  inputBox.value = "";
-  inputBox.style.display = "none";
-
-  if (inputResolver) {
-    inputResolver(value);
-    inputResolver = null;
-  }
-}
-
 function setupPrint(pyodide) {
+  if (printInitialized) return;
+
   pyodide.runPython(`
 import sys
 
@@ -45,26 +33,26 @@ class Console:
 
 sys.stdout = Console()
   `);
+
+  printInitialized = true;
 }
 
-window.addOutput = function(text) {
-  const output = document.getElementById("output");
-  output.innerText += text;
-};
+function submitInput() {
+  const inputBox = document.getElementById("inputBox");
+  const value = inputBox.value;
 
-async function runCode() {
-  const pyodide = await pyodideReady;
+  inputBox.value = "";
+  inputBox.style.display = "none";
 
-  document.getElementById("output").innerText = "";
+  const resolve = inputQueue.shift();
 
-  setupInput(pyodide);
-  setupPrint(pyodide);
-
-  const code = editor.getValue();
-
-  try {
-    await pyodide.runPythonAsync(code);
-  } catch (err) {
-    document.getElementById("output").innerText = err;
+  if (resolve) {
+    resolve(value);
   }
 }
+
+function resetOutput() {
+  document.getElementById("output").innerText = "";
+}
+
+resetOutput();

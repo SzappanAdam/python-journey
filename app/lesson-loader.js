@@ -2,24 +2,21 @@ async function loadLesson(file) {
   const res = await fetch(`../lessons/${file}`);
   const md = await res.text();
 
-  const lesson = parseLesson(md);
-
-  document.getElementById("lesson-title").innerText = lesson.title;
-  document.getElementById("lesson-content").innerHTML = lesson.html;
-
-  return lesson.code;
+  return parseLesson(md);
 }
 
 function parseLesson(md) {
-  const theory = extractSection(md, "THEORY");
-  const task = extractSection(md, "TASK");
-  const code = extractCode(md);
-
   return {
-    theory,
-    task,
-    code
+    title: extractTitle(md),
+    theory: extractSection(md, "THEORY"),
+    task: extractSection(md, "TASK"),
+    code: extractCode(md)
   };
+}
+
+function extractTitle(md) {
+  const match = md.match(/# (.*)/);
+  return match ? match[1].trim() : "Lesson";
 }
 
 function extractSection(md, section) {
