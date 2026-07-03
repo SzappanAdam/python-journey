@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Journey - Interactive Lab</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Pyodide -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+  <!-- Monaco Editor -->
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    🐍 Python Journey Lab
+  </div>
+
+  <div class="layout">
+
+    <!-- LEFT: LESSON -->
+    <div class="lesson">
+      <h2 id="lesson-title">Lesson 1</h2>
+      <div id="lesson-content">
+        Loading lesson...
+      </div>
+    </div>
+
+    <!-- RIGHT: EDITOR -->
+    <div class="editor-panel">
+
+      <div id="editor"></div>
+
+      <button onclick="runCode()">▶ Run</button>
+
+      <pre id="output"></pre>
+        <div id="inputContainer" style="margin-top:10px;">
+        <div id="inputPrompt"></div>
+
+        <input id="inputBox"
+         style="display:none; padding:8px; width:100%;"
+         onkeydown="if(event.key==='Enter') submitInput()">
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="lessons.js"></script>
+<script src="editor.js"></script>
+<script src="runner.js"></script>
+
+</body>
+</html>
