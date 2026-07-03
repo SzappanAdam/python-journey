@@ -11,21 +11,24 @@ async function loadLesson(file) {
 }
 
 function parseLesson(md) {
-  const titleMatch = md.match(/# (.*)/);
-  const codeMatch = md.match(/```python([\s\S]*?)```/);
-
-  const title = titleMatch ? titleMatch[1] : "Lesson";
-  const code = codeMatch ? codeMatch[1].trim() : "";
-
-  // remove code blocks for HTML content
-  let html = md
-    .replace(/```python[\s\S]*?```/g, "")
-    .replace(/# (.*)/, "<h2>$1</h2>")
-    .replace(/\n/g, "<br>");
+  const theory = extractSection(md, "THEORY");
+  const task = extractSection(md, "TASK");
+  const code = extractCode(md);
 
   return {
-    title,
-    code,
-    html
+    theory,
+    task,
+    code
   };
+}
+
+function extractSection(md, section) {
+  const regex = new RegExp(`## ${section}([\\s\\S]*?)(##|$)`);
+  const match = md.match(regex);
+  return match ? match[1].trim() : "";
+}
+
+function extractCode(md) {
+  const match = md.match(/```python([\s\S]*?)```/);
+  return match ? match[1].trim() : "";
 }

@@ -14,3 +14,12 @@ require(["vs/editor/editor.main"], function () {
   });
 
 });
+
+async function initLesson() {
+  const lesson = await loadLesson("lesson-01.md");
+
+  document.getElementById("theory").innerHTML = lesson.theory;
+  document.getElementById("task").innerHTML = lesson.task;
+
+  editor.setValue(lesson.code);
+}
