@@ -62,9 +62,14 @@ async function runCode() {
 
   const pyodide = await pyodideReady;
 
+  if (!window.editor) {
+    console.error("Editor not ready yet");
+    return;
+  }
+
   const code = window.editor.getValue();
 
-  document.getElementById("output").innerText = "";
+  resetOutput();
 
   setupInput(pyodide);
   setupPrint(pyodide);

@@ -1,5 +1,5 @@
 async function loadLesson(file) {
-  const res = await fetch(`../lessons/${file}`);
+  const res = await fetch(`lessons/${file}`);
   const md = await res.text();
 
   return parseLesson(md);

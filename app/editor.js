@@ -27,3 +27,5 @@ async function initLesson() {
 
   editor.setValue(lesson.code);
 }
+
+document.getElementById("lesson-title").innerText = lesson.title;
