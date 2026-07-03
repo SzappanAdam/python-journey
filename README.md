@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🐍 Python Journey
 
 Learn Python from scratch with interactive lessons,
@@ -29,3 +30,7 @@ How to use
 Contributing
 
 License
+=======
+# python-alapok-kezdoknek
+Python alapok teljesen a nulláról. Rövid tananyagok, egyszerű feladatok.
+>>>>>>> 42f370efb578f083d7800f35b4dd04921c0e8d2d
