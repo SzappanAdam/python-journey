@@ -1,6 +1,7 @@
-🟢 LESSON 1 – Hello, Python!
-
-Most jön az első valódi lecke.
+━━━━━━━━━━━━━━━━━━
+🐍 Python Journey
+Lesson 1 — Hello, Python!
+━━━━━━━━━━━━━━━━━━
 
 📚 Lesson 1: Hello, Python!
 🎯 Goals
@@ -103,5 +104,7 @@ How Python displays text
 How to modify code
 Basic syntax rules
 ➡ Next lesson
+
+Progress: 🟢 Beginner track (1 / 18 lessons)
 
 👉 Variables in Python

@@ -1,6 +1,7 @@
-🟡 LESSON 2 – Variables in Python
-
-Ez az egyik legfontosabb alap, mert itt értik meg először, hogy a program emlékezni tud dolgokra.
+━━━━━━━━━━━━━━━━━━
+🐍 Python Journey
+Lesson 2 — Variables in Python
+━━━━━━━━━━━━━━━━━━
 
 📚 Lesson 2: Variables in Python
 🎯 Goals
@@ -141,5 +142,7 @@ How to store text and numbers
 How to print variables
 Basic naming rules
 ➡ Next lesson
+
+Progress: 🟢 Beginner track (2 / 18 lessons)
 
 👉 Input & Output (interacting with the user)
